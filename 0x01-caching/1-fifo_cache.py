@@ -30,8 +30,8 @@ class FIFOCache(BaseCaching):
             return
 
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            discarded_key, _ = self.cache_data.popitem(last=False)
-            print(f"DISCARD: {discarded_key}")
+            first_key, _ = self.cache_data.popitem(last=False)
+            print(f"DISCARD: {first_key}")
 
         self.cache_data[key] = item
 
@@ -40,3 +40,4 @@ class FIFOCache(BaseCaching):
         If key is None or if the key doesn’t exist in `self.cache_data`, return None.
         """
         return self.cache_data.get(key, None)
+i
