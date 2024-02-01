@@ -3,7 +3,9 @@
 """Task 1: FIFO caching
 """
 
+from collections import OrderedDict
 from base_caching import BaseCaching
+
 
 class FIFOCache(BaseCaching):
     """A class `FIFOCache` that inherits from
@@ -13,6 +15,7 @@ class FIFOCache(BaseCaching):
     def __init__(self):
         """Initialize FIFOCache instance"""
         super().__init__()
+        self.cache_data = OrderedDict()
 
     def put(self, key, item):
         """Assign to the dictionary `self.cache_data` the
