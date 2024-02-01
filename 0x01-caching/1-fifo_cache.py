@@ -20,10 +20,6 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         """Assign to the dictionary `self.cache_data` the
         `item` value for the key `key`.
-        If key or item is None, do nothing.
-        If the number of items in `self.cache_data` is higher than BaseCaching.MAX_ITEMS,
-        discard the first item put in the cache (FIFO algorithm).
-        Print DISCARD with the key discarded.
         """
 
         if key is None or item is None:
